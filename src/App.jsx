@@ -3,6 +3,7 @@ import About from './About.jsx'
 import Skills from './Skills.jsx'
 import Footer from './Footer.jsx'
 import Fortune from './Fortune.jsx'
+import FeatherFinderPortfolioCard from './FeatherFinderPortfolioCard.jsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Skills />
        <Fortune />
+       <FeatherFinderPortfolioCard />
       <Footer />
     </div>
   )
