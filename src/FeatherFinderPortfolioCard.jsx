@@ -1,8 +1,8 @@
 function FeatherFinderPortfolioCard() {
   let name = "Feather Finder"
   let description = "A bird identification project that helps identify birds from an uploaded image."
-  let liveUrl = "PASTE-YOUR-LIVE-FEATHER-FINDER-LINK-HERE"
-  let repoUrl = "PASTE-YOUR-GITHUB-REPO-LINK-HERE"
+  let liveUrl = "https://kevinikal.github.io/feather-finder/"
+  let repoUrl = "https://github.com/KevinikaL/feather-finder.git"
 
   return (
     <article>
