@@ -6,7 +6,7 @@ import Fortune from './Fortune.jsx'
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <p>Learning React one component at a time.</p>
       <About />
