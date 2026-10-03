@@ -1,5 +1,6 @@
 import Header from './Header.jsx'
 import About from './About.jsx'
+import Skills from './Skills.jsx'
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <p>Learning React one component at a time.</p>
       <About />
+      <Skills />
        <Fortune />
       <Footer />
     </div>
