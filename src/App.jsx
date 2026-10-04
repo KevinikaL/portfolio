@@ -8,13 +8,13 @@ import ColorMixingQuizPortfolioCard from './ColorMixingQuizPortfolioCard.jsx'
 import DataPlaylistPortfolioCard from './DataPlaylistPortfolioCard.jsx'
 import Links from './Links.jsx'
 import NavBar from './NavBar.jsx'
+import Hero from './Hero.jsx'
 
 function App() {
   return (
     <div className="container">
       <Header />
-      <p>I’m learning web development and building projects with React; all while running my art buisness.</p>
-      <p>I hope to combine my creative skills with the new technical skills I’m learning to build engaging projects that connect with people and keep them coming back.</p>
+      <Hero />
       <About />
       <Skills />
        <Fortune />
