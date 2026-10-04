@@ -6,6 +6,8 @@ import Fortune from './Fortune.jsx'
 import FeatherFinderPortfolioCard from './FeatherFinderPortfolioCard.jsx'
 import ColorMixingQuizPortfolioCard from './ColorMixingQuizPortfolioCard.jsx'
 import DataPlaylistPortfolioCard from './DataPlaylistPortfolioCard.jsx'
+import Links from './Links.jsx'
+import NavBar from './NavBar.jsx'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
        <FeatherFinderPortfolioCard />
        <ColorMixingQuizPortfolioCard />
        <DataPlaylistPortfolioCard />
+       <Links />
+       <NavBar />
       <Footer />
     </div>
   )
