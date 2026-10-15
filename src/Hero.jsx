@@ -97,12 +97,12 @@ function Hero() {
       {/* Buttons that change the image appearance */}
       <p>
         {/* Move backward through the photos */}
-       <button onClick={previousPhoto}>Previous</button>
+       <button onClick={previousPhoto}>Previous Photo</button>
 
        &nbsp;
 
         {/* Move forward through the photos */}
-       <button onClick={nextPhoto}>Next</button>
+       <button onClick={nextPhoto}>Next photo</button>
 
        &nbsp;
         {/* Return the image to normal color */}

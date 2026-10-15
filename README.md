@@ -13,7 +13,6 @@ This portfolio also introduces who I am and the skills I am learning.
 | `About` | information about me | typed into the JSX |
 | `Skills` | skills I am learning | typed into the JSX |
 | `Fortune` | a random fortune | a list and `randomNumber` | which fortune is showing |
-| `Footer` | © and the current year | the year the page is opened |
 | `FeatherFinderPortfolioCard` | my Feather Finder project, description, and links | variables inside the component | its likes |
 | `ColorMixingQuizPortfolioCard` | my Color Mixing Quiz project, description, and links | variables inside the component | its likes |
 | `DataPlaylistPortfolioCard` | my Data Playlist project, description, and links | variables inside the component | its likes |
@@ -88,11 +87,6 @@ This week's state features:
 - Fortune remembers which fortune is showing.
 - Each project card remembers its own number of likes.
 -->
-
-## What I'm adding next
-
-- More project cards
-- Better styling with Pico CSS
 
 ## Built with
 

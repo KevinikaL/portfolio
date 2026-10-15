@@ -63,6 +63,7 @@ function DataPlaylistPortfolioCard() {
 
       {/* Open or close the extra project details */}
       <button onClick={toggleOpen}>{label}</button>
+      {open ? "Show less" : "Tell me more"}
 
 
       {/* links to the live project and the code */}
