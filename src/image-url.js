@@ -4,7 +4,7 @@ const imageUrl = (width, height, sat) =>
   "&h=" +
   height +
   "&fit=crop&auto=format" +
-  "&sat=" +
+  "&sat=" + sepia
   sat
 
 // Make imageUrl available to other files

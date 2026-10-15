@@ -2,7 +2,7 @@
 import imageUrl from './image-url.js'
 
 // Create a function that builds the hero image information
-const heroPhoto = (width, height, description, sat) => {
+const heroPhoto = (width, height, description, sat, sepia) => {
   // Create the image URL using the width and height and saturation
   const src = imageUrl(width, height, sat)
 
