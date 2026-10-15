@@ -120,6 +120,19 @@ function Hero() {
         {/* Add a sepia tint */}
         <button onClick={showSepia}>Sepia</button>
       </p>
+      {/* Let the visitor control the sepia amount */}
+      <label>
+       Sepia: {sepia}
+
+       {/* Change sepia from 0 to 100 */}
+     <input
+      type="range"
+      min="0"
+      max="100"
+      value={sepia}
+    onChange={(event) => setSepia(Number(event.target.value))}
+       />
+     </label>
     </div>
   )
 }
