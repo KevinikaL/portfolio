@@ -2,9 +2,9 @@
 import imageUrl from './image-url.js'
 
 // Create a function that builds the hero image information
-const heroPhoto = (width, height, description, sat, sepia) => {
+const heroPhoto = (photoId, width, height, sat, description, sepia) => {
   // Create the image URL using the width and height and saturation
-  const src = imageUrl(width, height, sat)
+  const src = imageUrl(photoId, width, height, sat, sepia)
 
   // Store the image description for the alt text
   const alt = description
