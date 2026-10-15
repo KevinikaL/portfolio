@@ -9,6 +9,10 @@ function DataPlaylistPortfolioCard() {
   // Store the project description
   let description = "A JavaScript playlist app that displays songs from data and lets users browse the collection."
 
+  // store extra details that appear when Show More is open
+  let details = "I built it to practice working with data, changing what appears on the page, and moving through a collection of songs."
+
+
   // Store the link to the live project
   let liveUrl = "https://kevinikal.github.io/data-playlist/"
 
@@ -18,26 +22,55 @@ function DataPlaylistPortfolioCard() {
   // Remember how many likes this card has
   const [likes, setLikes] = useState(0)
 
+  // Remember whether the extra details are open or closed
+  const [open, setOpen] = useState(false)
+
   // Add one like each time the button is clicked
   const addLike = () => {
     setLikes(likes + 1)
   }
+  // Switch open from false to true, or true to false
+  const toggleOpen = () => {
+    setOpen(!open)
+  }
+
+  // Start with the short description
+  let text = description
+
+  // If the card is open, add the extra details
+  if (open) {
+    text = description + " " + details
+  }
+
+  // Start with the Show More label
+  let label = "Show More"
+
+  // If the card is open, change the button label
+  if (open) {
+    label = "Show Less"
+  }
+
 
   // Return the project card
   return (
     <article>
-      {/* Show the project name */}
+      {/* project name */}
       <h2>{name}</h2>
 
-      {/* Show the project description */}
-      <p>{description}</p>
+      {/* Show either the short or expanded description */}
+      <p>{text}</p>
 
-      {/* Show links to the live project and the code */}
+
+      {/* Open or close the extra project details */}
+      <button onClick={toggleOpen}>{label}</button>
+
+
+      {/* links to the live project and the code */}
       <p>
         <a href={liveUrl}>See it live</a> · <a href={repoUrl}>Read the code</a>
       </p>
 
-      {/* Show the like count and increase it when clicked */}
+      {/* the like count and increase it when clicked */}
       <button onClick={addLike}>Like {likes}</button>
     </article>
   )
