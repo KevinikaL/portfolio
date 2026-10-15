@@ -1,8 +1,11 @@
-const imageUrl = (width, height) =>
+const imageUrl = (width, height, sat) =>
   "https://images.unsplash.com/photo-1786226462494-7ed4a4b8fd54?w=" +
   width +
   "&h=" +
   height +
-  "&fit=crop&auto=format"
+  "&fit=crop&auto=format" +
+  "&sat=" +
+  sat
 
+// Make imageUrl available to other files
 export default imageUrl
