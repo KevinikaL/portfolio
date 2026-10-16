@@ -31,6 +31,10 @@ This portfolio also introduces who I am and the skills I am learning.
 
 React, Vite, Bun, and Pico CSS.
 
+## AI Assistance
+
+I used ChatGPT to help me troubleshoot errors, organize and clean up my code, add comments, and explain concepts I was learning while completing this project.
+
 <!--
 README NOTES
 
