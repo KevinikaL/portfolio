@@ -1,24 +1,20 @@
-// Import React's useState hook so this card can remember its like count
+// Import React's useState hook
 import { useState } from 'react'
 
 // Create the Feather Finder portfolio card component
 function FeatherFinderPortfolioCard() {
-  // Store the project name
-  let name = "Feather Finder"
-
-  // Store the project description
-  let description = "A bird identification project that helps identify birds from an uploaded image."
-
-  // Store the link to the live project
-  let liveUrl = "https://kevinikal.github.io/feather-finder/"
-
-  // Store the link to the GitHub repository
-  let repoUrl = "https://github.com/KevinikaL/feather-finder.git"
+  // Store all Feather Finder project information in one object
+  const project = {
+    name: "Feather Finder",
+    description: "A bird identification project that helps identify birds from an uploaded image.",
+    liveUrl: "https://kevinikal.github.io/feather-finder/",
+    repoUrl: "https://github.com/KevinikaL/feather-finder.git",
+  }
 
   // Remember how many likes this card has
   const [likes, setLikes] = useState(0)
 
-  // Add one like each time the button is clicked
+  // Add one like when the button is clicked
   const addLike = () => {
     setLikes(likes + 1)
   }
@@ -26,22 +22,23 @@ function FeatherFinderPortfolioCard() {
   // Return the project card
   return (
     <article>
-      {/* Show the project name */}
-      <h2>{name}</h2>
+      {/* Read the project name from the object */}
+      <h2>{project.name}</h2>
 
-      {/* Show the project description */}
-      <p>{description}</p>
+      {/* Read the project description from the object */}
+      <p>{project.description}</p>
 
-      {/* Show links to the live project and the code */}
+      {/* Read the project links from the object */}
       <p>
-        <a href={liveUrl}>See it live</a> · <a href={repoUrl}>Read the code</a>
+        <a href={project.liveUrl}>See it live</a> ·{" "}
+        <a href={project.repoUrl}>Read the code</a>
       </p>
 
-      {/* Show the like count and increase it when clicked */}
+      {/* Show and update the like count */}
       <button onClick={addLike}>Like {likes}</button>
     </article>
   )
 }
 
-// Make this component available to App.jsx
+// Make the component available to App.jsx
 export default FeatherFinderPortfolioCard
