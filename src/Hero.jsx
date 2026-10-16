@@ -15,72 +15,122 @@ function Hero() {
     "vector-1776173941949-9c53d6fc1598",
   ]
 
-  // Store a description for each image in the same order
+  // Store a matching description for each image
   const descriptions = [
     "Moment in Focus",
     "A computer screen with a keyboard and coding setup",
     "Hands balancing a house and coins on a scale",
   ]
-  // Remember which hero photo is currently showing
-  const [index, setIndex] = useState(0)
 
-  // Remember the hero image's saturation setting
-  const [sat, setSat] = useState(0)
+  // Remember all hero settings in one state object
+  const [settings, setSettings] = useState({
+    index: 0,
+    sat: 0,
+    sepia: 0,
+  })
 
-  // Remember the hero image's sepia setting
-  const [sepia, setSepia] = useState(0)
-
-   // Move to the next photo
+  // Move to the next photo
   const nextPhoto = () => {
     // If we are on the last photo, go back to the first
-    if (index === photos.length - 1) {
-      setIndex(0)
+    if (settings.index === photos.length - 1) {
+      setSettings({
+        // Keep the other settings the same
+        ...settings,
+
+        // Change only the photo index
+        index: 0,
+      })
     } else {
-      // Otherwise move forward by one
-      setIndex(index + 1)
+      setSettings({
+        // Keep the other settings the same
+        ...settings,
+
+        // Move forward by one photo
+        index: settings.index + 1,
+      })
     }
   }
 
   // Move to the previous photo
   const previousPhoto = () => {
     // If we are on the first photo, go to the last
-    if (index === 0) {
-      setIndex(photos.length - 1)
+    if (settings.index === 0) {
+      setSettings({
+        // Keep the other settings the same
+        ...settings,
+
+        // Move to the last photo
+        index: photos.length - 1,
+      })
     } else {
-      // Otherwise move backward by one
-      setIndex(index - 1)
+      setSettings({
+        // Keep the other settings the same
+        ...settings,
+
+        // Move backward by one photo
+        index: settings.index - 1,
+      })
     }
   }
 
   // Show the image in normal color
   const showColor = () => {
-    setSat(0)
-    setSepia(0)
+    setSettings({
+      // Keep the current photo
+      ...settings,
+
+      // Reset the color settings
+      sat: 0,
+      sepia: 0,
+    })
   }
 
   // Show the image in black and white
   const showBlackAndWhite = () => {
-    setSat(-100)
-    setSepia(0)
+    setSettings({
+      // Keep the current photo
+      ...settings,
+
+      // Remove the color
+      sat: -100,
+
+      // Turn sepia off
+      sepia: 0,
+    })
   }
 
   // Show the image with a sepia tint
   const showSepia = () => {
-    setSat(0)
-    setSepia(100)
+    setSettings({
+      // Keep the current photo
+      ...settings,
+
+      // Keep normal saturation
+      sat: 0,
+
+      // Turn sepia all the way up
+      sepia: 100,
+    })
   }
 
-  // For now, use position 0 from both arrays
+  // Build the currently selected hero image
   const [src, alt] = heroPhoto({
-    photo: photos[index],
+    // Use the current photo index from state
+    photo: photos[settings.index],
+
+    // Set the hero image size
     width: 1200,
     height: 500,
-    sat,
-    description: descriptions[index],
-    sepia,
+
+    // Use the color settings from state
+    sat: settings.sat,
+    sepia: settings.sepia,
+
+    // Use the matching description
+    description: descriptions[settings.index],
   })
 
-  // Return the hero and its color controls
+  // Return the hero and its controls
   return (
     <div>
       {/* Keep the hero image and text together */}
@@ -94,45 +144,60 @@ function Hero() {
         </h2>
       </div>
 
-      {/* Buttons that change the image appearance */}
+      {/* Show which photo is currently selected */}
+      <p>
+        Photo {settings.index + 1} of {photos.length}
+      </p>
+
+      {/* Buttons that change the photo and appearance */}
       <p>
         {/* Move backward through the photos */}
-       <button onClick={previousPhoto}>Previous Photo</button>
+        <button onClick={previousPhoto}>Previous Photo</button>
 
-       &nbsp;
+        &nbsp;
 
         {/* Move forward through the photos */}
-       <button onClick={nextPhoto}>Next photo</button>
+        <button onClick={nextPhoto}>Next Photo</button>
 
-       &nbsp;
+        &nbsp;
+
         {/* Return the image to normal color */}
         <button onClick={showColor}>Color</button>
 
-        {/* Add a space between buttons */}
         &nbsp;
 
         {/* Turn the image black and white */}
-        <button onClick={showBlackAndWhite}>Black and White</button>
+        <button onClick={showBlackAndWhite}>
+          Black and White
+        </button>
 
-        {/* Add a space between buttons */}
         &nbsp;
 
-        {/* Add a sepia tint */}
+        {/* Give the image a sepia tint */}
         <button onClick={showSepia}>Sepia</button>
       </p>
+
       {/* Let the visitor control the sepia amount */}
       <label>
-       Sepia: {sepia}
+        Sepia: {settings.sepia}
 
-       {/* Change sepia from 0 to 100 */}
-     <input
-      type="range"
-      min="0"
-      max="100"
-      value={sepia}
-    onChange={(event) => setSepia(Number(event.target.value))}
-       />
-     </label>
+        {/* Update only the sepia setting when the slider moves */}
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={settings.sepia}
+          onChange={(event) =>
+            setSettings({
+              // Keep the current photo and saturation
+              ...settings,
+
+              // Change only sepia
+              sepia: Number(event.target.value),
+            })
+          }
+        />
+      </label>
     </div>
   )
 }
