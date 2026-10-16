@@ -8,18 +8,20 @@ import heroPhoto from './hero-photo.js'
 import './hero.css'
 
 function Hero() {
-  // Store the three Unsplash image IDs
+  // Store each photo together with its matching description
   const photos = [
-    "photo-1786226462494-7ed4a4b8fd54",
-    "photo-1669023414166-a4cc7c0fe1f5",
-    "vector-1776173941949-9c53d6fc1598",
-  ]
-
-  // Store a matching description for each image
-  const descriptions = [
-    "Moment in Focus",
-    "A computer screen with a keyboard and coding setup",
-    "Hands balancing a house and coins on a scale",
+    {
+      id: "photo-1786226462494-7ed4a4b8fd54",
+      description: "Moment in Focus",
+    },
+    {
+      id: "photo-1669023414166-a4cc7c0fe1f5",
+      description: "A computer screen with a keyboard and coding setup",
+    },
+    {
+      id: "vector-1776173941949-9c53d6fc1598",
+      description: "Hands balancing a house and coins on a scale",
+    },
   ]
 
   // Remember all hero settings in one state object
@@ -113,10 +115,13 @@ function Hero() {
     })
   }
 
+  // Get the current photo object and unpack its properties
+  const { id, description } = photos[settings.index]
+
   // Build the currently selected hero image
   const [src, alt] = heroPhoto({
-    // Use the current photo index from state
-    photo: photos[settings.index],
+    // Use the current photo's id
+    photo: id,
 
     // Set the hero image size
     width: 1200,
@@ -126,8 +131,8 @@ function Hero() {
     sat: settings.sat,
     sepia: settings.sepia,
 
-    // Use the matching description
-    description: descriptions[settings.index],
+    // Use the current photo's matching description
+    description,
   })
 
   // Return the hero and its controls
