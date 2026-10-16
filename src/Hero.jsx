@@ -71,14 +71,14 @@ function Hero() {
   }
 
   // For now, use position 0 from both arrays
-  const [src, alt] = heroPhoto(
-    photos[index],
-    1200,
-    500,
+  const [src, alt] = heroPhoto({
+    photo: photos[index],
+    width: 1200,
+    height: 500,
     sat,
-    descriptions[index],
-    sepia
-  )
+    description: descriptions[index],
+    sepia,
+  })
 
   // Return the hero and its color controls
   return (
