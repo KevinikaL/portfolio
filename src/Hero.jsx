@@ -4,25 +4,13 @@ import { useState } from 'react'
 // Import the hero photo helper
 import heroPhoto from './hero-photo.js'
 
+// Import the hero photos
+import photos from './photos.js'
+
 // Import the hero styles
 import './hero.css'
 
 function Hero() {
-  // Store each photo together with its matching description
-  const photos = [
-    {
-      id: "photo-1786226462494-7ed4a4b8fd54",
-      description: "Moment in Focus",
-    },
-    {
-      id: "photo-1669023414166-a4cc7c0fe1f5",
-      description: "A computer screen with a keyboard and coding setup",
-    },
-    {
-      id: "vector-1776173941949-9c53d6fc1598",
-      description: "Hands balancing a house and coins on a scale",
-    },
-  ]
 
   // Remember all hero settings in one state object
   const [settings, setSettings] = useState({
@@ -151,7 +139,7 @@ function Hero() {
 
       {/* Show which photo is currently selected */}
       <p>
-        Photo {settings.index + 1} of {photos.length}
+        Photo {settings.index + 1} of {photos.length}: {description}
       </p>
 
       {/* Buttons that change the photo and appearance */}
