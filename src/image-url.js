@@ -1,8 +1,17 @@
-const imageUrl = (width, height) =>
-  "https://images.unsplash.com/photo-1786226462494-7ed4a4b8fd54?w=" +
+// Build an Unsplash image URL using an image ID and image settings
+// If sat is not provided, use 0 by default
+const imageUrl = ({photo, width, height, sat = 0, sepia}) =>
+  "https://images.unsplash.com/" +
+  photo +
+  "?w=" +
   width +
   "&h=" +
   height +
-  "&fit=crop&auto=format"
+  "&fit=crop&auto=format" +
+  "&sat=" +
+  sat +
+  "&sepia=" +
+  sepia
 
+// Make imageUrl available to other files
 export default imageUrl
