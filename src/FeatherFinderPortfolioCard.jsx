@@ -2,15 +2,8 @@
 import { useState } from 'react'
 
 // Create the Feather Finder portfolio card component
-function FeatherFinderPortfolioCard() {
-  // Store all Feather Finder project information in one object
-  const project = {
-    name: "Feather Finder",
-    description: "A bird identification project that helps identify birds from an uploaded image.",
-    liveUrl: "https://kevinikal.github.io/feather-finder/",
-    repoUrl: "https://github.com/KevinikaL/feather-finder.git",
-  }
-
+function FeatherFinderPortfolioCard({ project }) {
+  
   // Remember how many likes this card has
   const [likes, setLikes] = useState(0)
 
@@ -41,4 +34,4 @@ function FeatherFinderPortfolioCard() {
 }
 
 // Make the component available to App.jsx
-export default FeatherFinderPortfolioCard
+export default ProjectCard
