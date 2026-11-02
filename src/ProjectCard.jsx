@@ -1,15 +1,39 @@
 // Import React's useState hook
 import { useState } from 'react'
 
-// Create the Feather Finder portfolio card component
-function FeatherFinderPortfolioCard({ project }) {
-  
+// Create the reusable project card component
+function ProjectCard({ project }) {
+ 
   // Remember how many likes this card has
   const [likes, setLikes] = useState(0)
+
+  // Remember whether the extra details are showing
+  const [open, setOpen] = useState(false)
 
   // Add one like when the button is clicked
   const addLike = () => {
     setLikes(likes + 1)
+  }
+
+  // Switch Show More on or off
+  const toggleOpen = () => {
+    setOpen(!open)
+  }
+
+  // Start with the short description
+  let text = project.description
+
+  // Add the extra details when the card is open
+  if (open) {
+    text = project.description + " " + project.details
+  }
+
+  // Start with the Show More label
+  let label = "Show More"
+
+  // Change the label when the card is open
+  if (open) {
+    label = "Show Less"
   }
 
   // Return the project card
@@ -18,8 +42,11 @@ function FeatherFinderPortfolioCard({ project }) {
       {/* Read the project name from the object */}
       <h2>{project.name}</h2>
 
-      {/* Read the project description from the object */}
-      <p>{project.description}</p>
+      {/* Show either the short or expanded description */}
+      <p>{text}</p>
+
+      {/* Open or close the extra details */}
+      <button onClick={toggleOpen}>{label}</button>
 
       {/* Read the project links from the object */}
       <p>
