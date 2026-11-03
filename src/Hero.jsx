@@ -10,6 +10,8 @@ import photos from './photos.js'
 // Import the hero styles
 import './hero.css'
 
+import PhotoControls from './PhotoControls.jsx'
+
 function Hero() {
 
   // Remember all hero settings in one state object
@@ -142,33 +144,15 @@ function Hero() {
         Photo {settings.index + 1} of {photos.length}: {description}
       </p>
 
-      {/* Buttons that change the photo and appearance */}
-      <p>
-        {/* Move backward through the photos */}
-        <button onClick={previousPhoto}>Previous Photo</button>
-
-        &nbsp;
-
-        {/* Move forward through the photos */}
-        <button onClick={nextPhoto}>Next Photo</button>
-
-        &nbsp;
-
-        {/* Return the image to normal color */}
-        <button onClick={showColor}>Color</button>
-
-        &nbsp;
-
-        {/* Turn the image black and white */}
-        <button onClick={showBlackAndWhite}>
-          Black and White
-        </button>
-
-        &nbsp;
-
-        {/* Give the image a sepia tint */}
-        <button onClick={showSepia}>Sepia</button>
-      </p>
+      
+        <PhotoControls
+         onPrevious={previousPhoto}
+         onNext={nextPhoto}
+         onColor={showColor}
+         onBlackAndWhite={showBlackAndWhite}
+         onSepia={showSepia}
+        />
+      
 
       {/* Let the visitor control the sepia amount */}
       <label>

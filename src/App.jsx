@@ -8,6 +8,7 @@ import NavBar from './NavBar.jsx'
 import Hero from './Hero.jsx'
 import ProjectCard from './ProjectCard.jsx'
 import projects from './projects.js'
+import PhotoControls from './PhotoControls.jsx'
 
 function App() {
   return (
