@@ -8,29 +8,29 @@ function PhotoControls({
   return (
     <p>
       {/* Move backward through the photos */}
-        <button onClick={onPrevious}>Previous Photo</button>
+        <button onClick={onPrevious}>Rewind</button>
 
         &nbsp;
 
         {/* Move forward through the photos */}
-        <button onClick={onNext}>Next Photo</button>
+        <button onClick={onNext}>Next View</button>
 
         &nbsp;
 
         {/* Return the image to normal color */}
-        <button onClick={onColor}>Color</button>
+        <button onClick={onColor}>Colorful</button>
 
         &nbsp;
 
         {/* Turn the image black and white */}
         <button onClick={onBlackAndWhite}>
-          Black and White
+          Classic Mode
         </button>
 
         &nbsp;
 
         {/* Give the image a sepia tint */}
-        <button onClick={onSepia}>Sepia</button>
+        <button onClick={onSepia}>Vintage Vibes</button>
         </p>
   )
 }
