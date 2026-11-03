@@ -6,16 +6,15 @@ This portfolio also introduces who I am and the skills I am learning.
 
 ## Components
 
-| Component | What it shows | Where its values come from | What it remembers |
-| --- | --- | --- | --- |
+| Component | What it shows | Where its values come from | What it remembers | What it receives |
+| --- | --- | --- | --- | --- |
 | `Header` | my name and a line about me | typed into the JSX | - |
 | `Hero` | my hero photo | `heroPhoto`, which calls `imageUrl` | whether the photo is in color |
 | `About` | information about me | typed into the JSX |
 | `Skills` | skills I am learning | typed into the JSX |
 | `Fortune` | a random fortune | a list and `randomNumber` | which fortune is showing |
-| `FeatherFinderPortfolioCard` | my Feather Finder project, description, and links | variables inside the component | its likes |
-| `ColorMixingQuizPortfolioCard` | my Color Mixing Quiz project, description, and links | variables inside the component | its likes |
-| `DataPlaylistPortfolioCard` | my Data Playlist project, description, and links | variables inside the component | its likes |
+| `ProjectCard` | Displays each project's name, description, details, and links | `projects.js` through `App` | Likes and Show More state | `project` |
+| `PhotoControls` | Buttons that change the hero photo and its appearance | `Hero` | - | `onNext`, `onPrevious`, `onColor`, `onBlackAndWhite`, `onSepia` |
 | `Gallery` | examples of my artwork and projects | image files in `public` | — |
 | `Links` | my external links | variables inside the component | — |
 | `NavBar` | links to different parts of my portfolio | links inside the component | — |

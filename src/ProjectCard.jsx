@@ -1,17 +1,9 @@
 // Import React's useState hook
 import { useState } from 'react'
 
-// Create the Data Playlist portfolio card component
-function DataPlaylistPortfolioCard() {
-  // Store all Data Playlist project information in one object
-  const project = {
-    name: "My Playlist",
-    description: "A JavaScript playlist app that displays songs from data and lets users browse the collection.",
-    details: "I built it to practice working with data, changing what appears on the page, and moving through a collection of songs.",
-    liveUrl: "https://kevinikal.github.io/data-playlist/",
-    repoUrl: "https://github.com/KevinikaL/data-playlist.git",
-  }
-
+// Create the reusable project card component
+function ProjectCard({ project }) {
+ 
   // Remember how many likes this card has
   const [likes, setLikes] = useState(0)
 
@@ -69,4 +61,4 @@ function DataPlaylistPortfolioCard() {
 }
 
 // Make the component available to App.jsx
-export default DataPlaylistPortfolioCard
+export default ProjectCard
