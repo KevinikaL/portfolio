@@ -18,9 +18,7 @@ function App() {
       <About />
       <Skills />
        <Fortune />
-       <ProjectCard project={projects[0]} />
-       <ProjectCard project={projects[1]} />
-       <ProjectCard project={projects[2]} />
+       {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
        <Links />
        <NavBar />
       <Footer />
